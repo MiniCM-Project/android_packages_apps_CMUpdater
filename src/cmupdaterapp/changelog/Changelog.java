@@ -79,10 +79,12 @@ public class Changelog implements Runnable
 		}
 		catch (ParserConfigurationException e)
 		{
+			m.obj = e.toString();
 			Log.e(TAG, "Exception on parsing XML File", e);
 		}
 		catch (SAXException e)
 		{
+			m.obj = e.toString();
 			Log.e(TAG, "Exception while creating SAXParser", e);
 		}
 		MainActivity.ChangelogProgressHandler.sendMessage(m);
